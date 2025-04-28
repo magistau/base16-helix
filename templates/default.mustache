@@ -2,31 +2,35 @@
 # Scheme author: {{scheme-author}}
 # Template author: Tinted Theming (https://github.com/tinted-theming)
 
-"attributes" = "base09"
+"tag" = "base08"
+"attribute" = "base09"
 "comment" = { fg = "base03", modifiers = ["italic"] }
 "constant" = "base09"
 "constant.character.escape" = "base0C"
 "constant.numeric" = "base09"
 "constructor" = "base0D"
-"debug" = "base03"
-"diagnostic" = { modifiers = ["underlined"] }
-"diff.delta" = "base09"
-"diff.minus" = "base08"
-"diff.plus" = "base0B"
-"error" = "base08"
 "function" = "base0D"
-"hint" = "base03"
-"info" = "base0D"
 "keyword" = "base0E"
 "label" = "base0E"
 "namespace" = "base0E"
-"operator" = "base05"
-"special" = "base0D"
-"string"  = "base0B"
+"operator" = "base05" # should `keyword.operator` be base05 as well?
+"special" = "base0D" # NOTE: what does this mean?
+# "special" = { fg = "base06", bg = "base07" } # DEBUG
+"string" = "base0B"
 "type" = "base0A"
-"variable" = "base08"
-"variable.other.member" = "base0B"
-"warning" = "base09"
+# "variable" = "base08" # variables should use the default fg to decrease visual clutter
+"variable.builtin" = "base0E"
+# "variable.parameter" = "base08"
+"variable.other.member" = "base08"
+
+"diff.delta" = "base0E"
+"diff.minus" = "base08"
+"diff.plus" = "base0B"
+
+"hint" = "base0E" # non-negative, non-positive, see diff.delta
+"info" = "base0D" # TODO: unclear how to color properly
+"warning" = "base0A"
+"error" = "base08"
 
 "markup.bold" = { fg = "base0A", modifiers = ["bold"] }
 "markup.heading" = "base0D"
@@ -38,19 +42,20 @@
 "markup.raw" = "base0B"
 "markup.strikethrough" = { modifiers = ["crossed_out"] }
 
-"diagnostic.hint" = { underline = { style = "curl" } }
-"diagnostic.info" = { underline = { style = "curl" } }
-"diagnostic.warning" = { underline = { style = "curl" } }
-"diagnostic.error" = { underline = { style = "curl" } }
+"diagnostic" = { modifiers = ["underlined"] }
+"diagnostic.hint".underline = { style = "curl", color = "base0E" }
+"diagnostic.info".underline = { style = "curl", color = "base0D" }
+"diagnostic.warning".underline = { style = "curl", color = "base0A" }
+"diagnostic.error".underline = { style = "curl", color = "base08" }
+"diagnostic.unnecessary" = { modifiers = [ "dim" ] }
+"diagnostic.deprecated" = { fg = "base0F", modifiers = [ "crossed_out" ] }
 
 "ui.background" = { bg = "base00" }
 "ui.bufferline.active" = { fg = "base00", bg = "base03", modifiers = ["bold"] }
 "ui.bufferline" = { fg = "base04", bg = "base00" }
-"ui.cursor" = { fg = "base0A", modifiers = ["reversed"] }
-"ui.cursor.insert" = { fg = "base0A", modifiers = ["reversed"] }
+"ui.cursor" = { fg = "base05", modifiers = ["reversed"] }
 "ui.cursorline.primary" = { fg = "base05", bg = "base01" }
-"ui.cursor.match" = { fg = "base0A", modifiers = ["reversed"] }
-"ui.cursor.select" = { fg = "base0A", modifiers = ["reversed"] }
+"ui.debug" = "base08"
 "ui.gutter" = { bg = "base00" }
 "ui.help" = { fg = "base06", bg = "base01" }
 "ui.linenr" = { fg = "base03", bg = "base00" }
@@ -68,6 +73,7 @@
 "ui.statusline.select" = { fg = "base00", bg = "base0F" }
 "ui.text" = "base05"
 "ui.text.focus" = "base05"
+"ui.virtual.whitespace" = { fg = "base03" }
 "ui.virtual.indent-guide" = { fg = "base03" }
 "ui.virtual.inlay-hint" = { fg = "base01" }
 "ui.virtual.ruler" = { bg = "base01" }
